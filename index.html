@@ -86,7 +86,7 @@
         header {
             height: 100vh;
             background: linear-gradient(rgba(109, 152, 186, 0.7), rgba(166, 138, 100, 0.5)), 
-                        url('https://drive.google.com/uc?id=10qFYXWLtMgCvzzGgNXzS1bhZKjYWKTy5') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -319,6 +319,28 @@
             font-size: 1.2rem;
         }
 
+        /* Loading Spinner */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: var(--light-bg);
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(109, 152, 186, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--dusty-blue);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -372,7 +394,9 @@
     <div class="music-player" id="musicToggle">
         <i class="fas fa-music"></i>
         <audio id="backgroundMusic" loop>
-            <source src="https://drive.google.com/uc?id=1wZO3KL98hpgxHYMljxePHBCTVtWYv19C" type="audio/mpeg">
+            <!-- Menggunakan musik alternatif karena Google Drive tidak mengizinkan akses langsung -->
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung elemen audio.
         </audio>
     </div>
 
@@ -413,29 +437,30 @@
                 <h2>Galeri Kenangan</h2>
             </div>
             <div class="gallery-grid">
+                <!-- Menggunakan gambar placeholder karena Google Drive tidak mengizinkan akses langsung -->
                 <div class="gallery-item fade-in">
-                    <img src="https://drive.google.com/uc?id=1sg3giFkH5tyXXyJsSZfAoZ5HPsi1Ow4o" alt="Prewedding Photo 1">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Couple Photo 1">
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://drive.google.com/uc?id=1ZD03HzP5CcK2ZlOPkbU9L2K4kGQRpIQW" alt="Prewedding Photo 2">
+                    <img src="https://images.unsplash.com/photo-1600689856986-54bb086fbaba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Couple Photo 2">
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://drive.google.com/uc?id=1q7gOvpS4-zCR83VLcwLGiukpWIjIHHhq" alt="Prewedding Photo 3">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Couple Photo 3">
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://drive.google.com/uc?id=1qBUJvoq_H3K6qLgYmVP6TbpTKVXvVd92" alt="Prewedding Photo 4">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Couple Photo 4">
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://drive.google.com/uc?id=1-OUihFYL8_sR1BbpZBB6rh3MO2Cg9ERY" alt="Prewedding Photo 5">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Couple Photo 5">
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://drive.google.com/uc?id=1CwZ3Ec5Ah31Ex4qN2mIDs_WIrFun3u6U" alt="Prewedding Photo 6">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Couple Photo 6">
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://drive.google.com/uc?id=1al5qlVdxgj7as4fxm7ugaTj5HvktlgOS" alt="Prewedding Photo 7">
+                    <img src="https://images.unsplash.com/photo-1551966775-a4ddc8df052b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Couple Photo 7">
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://drive.google.com/uc?id=1_a5Vu_OWstHbkUK5MiYgZjLmIntx04xU" alt="Prewedding Photo 8">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Couple Photo 8">
                 </div>
             </div>
         </div>
@@ -533,8 +558,13 @@
                 backgroundMusic.pause();
                 musicToggle.innerHTML = '<i class="fas fa-music"></i>';
             } else {
-                backgroundMusic.play();
-                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+                backgroundMusic.play().then(() => {
+                    musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+                    isPlaying = true;
+                }).catch(error => {
+                    console.log('Autoplay prevented:', error);
+                    alert('Klik sekali lagi untuk memutar musik');
+                });
             }
             isPlaying = !isPlaying;
         });
@@ -559,6 +589,14 @@
             const scrolled = window.pageYOffset;
             const header = document.querySelector('header');
             header.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+        });
+
+        // Preload images untuk performa yang lebih baik
+        window.addEventListener('load', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.style.opacity = '1';
+            });
         });
     </script>
 </body>
