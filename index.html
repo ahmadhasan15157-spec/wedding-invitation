@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Hasan Romi & Dayah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dusty-blue: #6D98BA;
+            --soft-blue: #A2C4D9;
+            --blue-ocean: #4A90A4;
+            --peach: #E6B89C;
+            --gold: #F4E4C1;
+            --pink: #E6CFE2;
+            --soft-brown: #A68A64;
+            --white: #FFFFFF;
+            --light-bg: #F9F7F4;
+            --dark-text: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dusty-blue);
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--peach), var(--dusty-blue));
+        }
+
+        /* Header Styles */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(109, 152, 186, 0.7), rgba(166, 138, 100, 0.5)), 
+                        url('https://drive.google.com/uc?id=10qFYXWLtMgCvzzGgNXzS1bhZKjYWKTy5') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            z-index: 2;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .couple-names {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .wedding-date {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+        }
+
+        .floral-divider {
+            width: 200px;
+            height: 40px;
+            margin: 2rem auto;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40"><path d="M20,20 C30,10 50,10 60,20 C70,30 90,30 100,20 C110,10 130,10 140,20 C150,30 170,30 180,20" stroke="white" stroke-width="2" fill="none"/><path d="M50,20 C55,15 65,15 70,20 C75,25 85,25 90,20 C95,15 105,15 110,20 C115,25 125,25 130,20 C135,15 145,15 150,20" stroke="white" stroke-width="2" fill="none"/></svg>') center/contain no-repeat;
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .verse {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--gold);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .verse-arabic {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .verse-translation {
+            font-style: italic;
+            color: var(--soft-brown);
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background-color: var(--light-bg);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Event Details */
+        #event {
+            background-color: var(--white);
+        }
+
+        .event-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .event-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .event-icon {
+            background-color: var(--dusty-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .event-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dusty-blue);
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--dusty-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .map-link:hover {
+            background-color: var(--blue-ocean);
+        }
+
+        /* Bank Account */
+        #bank {
+            background-color: var(--light-bg);
+        }
+
+        .bank-accounts {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .bank-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--dusty-blue);
+        }
+
+        .bank-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dusty-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--dusty-blue), var(--blue-ocean));
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .closing-message {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            background-color: var(--white);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .music-player:hover {
+            transform: scale(1.1);
+        }
+
+        .music-player i {
+            color: var(--dusty-blue);
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .couple-names {
+                font-size: 4.5rem;
+            }
+            
+            .wedding-date {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .about-content {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .couple-names {
+                font-size: 5.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player" id="musicToggle">
+        <i class="fas fa-music"></i>
+        <audio id="backgroundMusic" loop>
+            <source src="https://drive.google.com/uc?id=1wZO3KL98hpgxHYMljxePHBCTVtWYv19C" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="floral-divider"></div>
+            <h1 class="couple-names">Hasan Romi & Dayah</h1>
+            <div class="floral-divider"></div>
+            <p class="wedding-date">22 Desember 2025</p>
+            <p>Kami mengundang Anda untuk merayakan hari bahagia kami</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bismillahirrahmanirrahim</h2>
+            </div>
+            <div class="about-content">
+                <div class="verse">
+                    <div class="verse-arabic">
+                        وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ ۝٢١
+                    </div>
+                    <div class="verse-translation">
+                        "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir." (Ar Rum 21)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Kenangan</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://drive.google.com/uc?id=1sg3giFkH5tyXXyJsSZfAoZ5HPsi1Ow4o" alt="Prewedding Photo 1">
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://drive.google.com/uc?id=1ZD03HzP5CcK2ZlOPkbU9L2K4kGQRpIQW" alt="Prewedding Photo 2">
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://drive.google.com/uc?id=1q7gOvpS4-zCR83VLcwLGiukpWIjIHHhq" alt="Prewedding Photo 3">
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://drive.google.com/uc?id=1qBUJvoq_H3K6qLgYmVP6TbpTKVXvVd92" alt="Prewedding Photo 4">
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://drive.google.com/uc?id=1-OUihFYL8_sR1BbpZBB6rh3MO2Cg9ERY" alt="Prewedding Photo 5">
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://drive.google.com/uc?id=1CwZ3Ec5Ah31Ex4qN2mIDs_WIrFun3u6U" alt="Prewedding Photo 6">
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://drive.google.com/uc?id=1al5qlVdxgj7as4fxm7ugaTj5HvktlgOS" alt="Prewedding Photo 7">
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://drive.google.com/uc?id=1_a5Vu_OWstHbkUK5MiYgZjLmIntx04xU" alt="Prewedding Photo 8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section id="event">
+        <div class="container">
+            <div class="section-title">
+                <h2>Informasi Acara</h2>
+            </div>
+            <div class="event-details">
+                <div class="event-item">
+                    <div class="event-icon">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <div class="event-info">
+                        <h3>Tanggal & Waktu</h3>
+                        <p>22 Desember 2025</p>
+                        <p>Akad Nikah: 08:00 WIB</p>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="event-info">
+                        <h3>Lokasi</h3>
+                        <p>Jrakah, Rt/Rw 007/002, Kaliurang, Srumbung, Magelang</p>
+                        <a href="https://maps.app.goo.gl/gdj2cQWz9SVw427a9" target="_blank" class="map-link">
+                            <i class="fas fa-external-link-alt"></i> Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bank Account -->
+    <section id="bank">
+        <div class="container">
+            <div class="section-title">
+                <h2>Amplop Digital</h2>
+            </div>
+            <div class="bank-accounts">
+                <div class="bank-item">
+                    <div class="bank-name">
+                        <i class="fas fa-university"></i>
+                        <h3>Bank Muamalat</h3>
+                    </div>
+                    <p>No. Rekening: 5350010487</p>
+                    <p>Atas Nama: Hidayatun M</p>
+                </div>
+                <div class="bank-item">
+                    <div class="bank-name">
+                        <i class="fas fa-university"></i>
+                        <h3>Bank BRI</h3>
+                    </div>
+                    <p>No. Rekening: 366601036311531</p>
+                    <p>Atas Nama: Ahmad Hasan Romi</p>
+                </div>
+                <div class="bank-item">
+                    <div class="bank-name">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Gopay / Sopay</h3>
+                    </div>
+                    <p>No. Telepon: 085726868533</p>
+                    <p>Atas Nama: Ahmad Hasan Romi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="closing-message">
+                <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu kepada kami.</p>
+                <p style="margin-top: 1rem;">Terima kasih atas perhatian dan doa restunya.</p>
+            </div>
+            <div class="copyright">
+                <p>© 2025 - Hasan Romi & Dayah</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Music Player Functionality
+        const musicToggle = document.getElementById('musicToggle');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        let isPlaying = false;
+
+        musicToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicToggle.innerHTML = '<i class="fas fa-music"></i>';
+            } else {
+                backgroundMusic.play();
+                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            appearOnScroll.observe(element);
+        });
+
+        // Parallax Effect for Header
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('header');
+            header.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+        });
+    </script>
+</body>
+</html>
